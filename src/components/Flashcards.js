@@ -4,7 +4,7 @@ import FlashcardItem from "./FlashcardItem"
 
 
 
-const Flashcards = (props) => {
+const Flashcards = () => {
 
 
     return (
