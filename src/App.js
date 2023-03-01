@@ -2,6 +2,7 @@ import image0 from "./images/image2.png"
 import Flashcards from "./components/Flashcards";
 import styled from "styled-components";
 
+
 const App = () => {
   return (
     <Container>
@@ -9,8 +10,9 @@ const App = () => {
         <img src={image0} alt={image0}/>
       ZapRecall
       </Titulo>
-      < Flashcards />
+      < Flashcards/>
      
+    
       <BoxLow>
         0/4 CONCLUÍDOS 
       </BoxLow>
@@ -18,7 +20,26 @@ const App = () => {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default App
+
+
+
 
 const Container = styled.div `
     background-color: #FB6B6B;
