@@ -10,9 +10,9 @@ const App = () => {
         <img src={image0} alt={image0}/>
       ZapRecall
       </Titulo>
+
       < Flashcards/>
      
-    
       <BoxLow>
         0/4 CONCLUÍDOS 
       </BoxLow>

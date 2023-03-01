@@ -3,42 +3,25 @@ import styled from "styled-components"
 import { useState } from "react"
 import setaredonda from "../images/Setinha.png"
 
-const cards = [
-	{ question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
-	{ question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
-	{ question: "Componentes devem iniciar com __", answer: "Letra maiúscula" },
-	{ question: "Podemos colocar __ dentro do JSX", answer: "expressões" },
-	{ question: "O ReactDOM nos ajuda __", answer: "Interagindo com a DOM para colocar componentes React na mesma" },
-	{ question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências" },
-	{ question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
-	{ question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
-]
 
 
-
-
-console.log(cards[0].question)
+// console.log(cards[0].question)
 
 const FlashcardItem = (props) => {
-
 
     const [altura, setAltura] = useState (65)
     const [cor, setCor] = useState ("#FFFFFF")
     const [texto, setTexto] = useState (props.texto)
     const [seta, setSeta] = useState (vector)
-  
 
-    function setinha () {
+    function clicouSetinha () {
+         
         setAltura (130)
         setCor ("#FFFFD4")
-        setTexto (cards[0].question)
+        setTexto (props.question)
         setSeta (setaredonda)
-      
       }
 
-
-
-   
 
     return (
     
@@ -50,7 +33,8 @@ const FlashcardItem = (props) => {
       <Pergunta>
       {texto}
      </Pergunta>
-      <Button onClick={setinha}>
+      <Button onClick={clicouSetinha}
+      >
       <img src={seta} alt={vector} /> 
       </Button>
       </Flashcard> 
@@ -59,6 +43,19 @@ const FlashcardItem = (props) => {
 
 
   export default FlashcardItem
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   const Pergunta = styled.div `
