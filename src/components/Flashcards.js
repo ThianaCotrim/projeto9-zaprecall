@@ -25,7 +25,7 @@ const Flashcards = (props) => {
             question={question}
             answer={answer}
             quantidade={props.quantidade}
-            haha={props.haha}
+            contagem={props.contagem}
             />
             
         )

@@ -58,7 +58,7 @@ const FlashcardItem = (props) => {
    setCorTexto("#FF3030")
    setLinha('line-through')
    setDisable('disabled')
-   props.haha()
+   props.contagem()
    
    
   }
@@ -71,7 +71,7 @@ const FlashcardItem = (props) => {
     setSeta(quase)
     setCorTexto("#FF922E")
     setLinha('line-through')
-    props.haha()
+    props.contagem()
   }
 
   function clicouVerde() {
@@ -82,7 +82,7 @@ const FlashcardItem = (props) => {
     setSeta(certo)
     setCorTexto("#2FBE34")
     setLinha('line-through')
-    props.haha()
+    props.contagem()
   }
 
   return (
@@ -96,53 +96,41 @@ const FlashcardItem = (props) => {
             seta={seta}
             corTexto={corTexto}
             linha={linha}
-            
-            >
-             
-              
-            <Pergunta 
-            >
+            data-test="flashcard">
+            <Pergunta data-test="flashcard-text">
               {texto}
             </Pergunta>
-            <Button disabled={disable} onClick={clicouSetinha}>
-              <img src={seta} alt={vector} />
+            <Button disabled={disable} onClick={clicouSetinha} data-test="play-btn">
+              <img src={seta} alt={vector} data-test="no-icon"/>
             </Button>
           </Flashcard>
-         
-          </div>
-       
-       
-      ) : (
+        </div>
+     ) : (
         <div>
           <Teste
             altura={altura}
             cor={cor}
-            seta={seta}>
+            seta={seta}
+            data-test="turn-btn">
             <PerguntaDois>
               {texto}
             </PerguntaDois>
             <Maior >
-              <Vermelho onClick={clicouVermelho} >
+              <Vermelho onClick={clicouVermelho} data-test="no-btn">
                 Não lembrei
               </Vermelho>
-              <Laranja onClick={clicouLaranja}>
+              <Laranja onClick={clicouLaranja} data-test="partial-btn">
                 Quase não lembrei
               </Laranja>
-              <Verde onClick={clicouVerde}>
+              <Verde onClick={clicouVerde} data-test="zap-btn">
                 Zap!
               </Verde>
             </Maior>
           </Teste>
-        
-         
-          
         </div>
       )}
-     
-    </div>
-    
+    </div> 
   )
- 
 }
 
 export default FlashcardItem

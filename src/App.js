@@ -12,7 +12,7 @@ const App = () => {
 
  const [quantidade, setQuantidade] = useState(0)
  
-  function haha () {
+  function contagem () {
     setQuantidade(quantidade +1)
   }
   
@@ -24,10 +24,10 @@ const App = () => {
         <img src={image0} alt={image0}/>
       ZapRecall
       </Titulo>
-      <BoxLow >
+      <BoxLow data-test="footer">
          {quantidade}/8 CONCLUÍDOS 
           </BoxLow>
-      < Flashcards quantidade={quantidade} haha={haha}/>
+      < Flashcards quantidade={quantidade} contagem={contagem}/>
     </Container>
   );
 }
