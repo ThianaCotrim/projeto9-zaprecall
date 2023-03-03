@@ -10,8 +10,6 @@ import quase from "../images/icone_quase.png"
 
 
 
-
-
 const FlashcardItem = (props) => {
 
   const [altura, setAltura] = useState(65)
@@ -22,10 +20,9 @@ const FlashcardItem = (props) => {
   const [corTexto, setCorTexto] = useState ("#333333")
   const [linha, setLinha] = useState ()
   const [disable, setDisable] = useState ('')
+  const [icone, setIcone] = useState ("play-btn")
  
  
-
-
 
   function clicouSetinha() {
 
@@ -34,6 +31,7 @@ const FlashcardItem = (props) => {
     setTexto(props.question)
     setSeta(setaredonda)
     clicouSetinhaRedonda()
+    setIcone ("turn-btn")
   }
 
   function clicouSetinhaRedonda() {
@@ -97,10 +95,10 @@ const FlashcardItem = (props) => {
             corTexto={corTexto}
             linha={linha}
             data-test="flashcard">
-            <Pergunta data-test="flashcard-text">
+            <Pergunta >
               {texto}
             </Pergunta>
-            <Button disabled={disable} onClick={clicouSetinha} data-test="play-btn">
+            <Button disabled={disable} onClick={clicouSetinha} data-test={icone} icone={icone}>
               <img src={seta} alt={vector} data-test="no-icon"/>
             </Button>
           </Flashcard>
