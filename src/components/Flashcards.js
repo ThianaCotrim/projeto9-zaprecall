@@ -36,8 +36,6 @@ const Flashcards = () => {
   export default Flashcards 
 
 
- 
-
   const FlascardContainer = styled.div`
     width: 300px;
     height: 100%;
