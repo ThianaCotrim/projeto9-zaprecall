@@ -1,5 +1,5 @@
 import image0 from "./images/image2.png"
-import Flashcards from "./components/Flashcards";
+import Flashcard from "./components/Flashcards";
 import styled from "styled-components";
 
 
@@ -11,10 +11,10 @@ const App = () => {
       ZapRecall
       </Titulo>
 
-      < Flashcards/>
+      < Flashcard/>
      
       <BoxLow>
-        0/4 CONCLUÍDOS 
+        0/8 CONCLUÍDOS 
       </BoxLow>
     </Container>
   );

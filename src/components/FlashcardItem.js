@@ -1,8 +1,15 @@
 
+
 import vector from "../images/vector.png"
 import styled from "styled-components"
 import { useState } from "react"
 import setaredonda from "../images/Setinha.png"
+import erro from "../images/icone_erro.png"
+import certo from "../images/icone_certo.png"
+import quase from "../images/icone_quase.png"
+
+
+
 
 
 const FlashcardItem = (props) => {
@@ -12,6 +19,11 @@ const FlashcardItem = (props) => {
   const [texto, setTexto] = useState(props.texto)
   const [seta, setSeta] = useState(vector)
   const [telaResposta, setTelaResposta] = useState(true)
+  const [corTexto, setCorTexto] = useState ("#333333")
+  const [linha, setLinha] = useState ()
+  const [disable, setDisable] = useState ('')
+ 
+
 
 
   function clicouSetinha() {
@@ -21,6 +33,8 @@ const FlashcardItem = (props) => {
     setTexto(props.question)
     setSeta(setaredonda)
     clicouSetinhaRedonda()
+    
+
   }
 
   function clicouSetinhaRedonda() {
@@ -30,10 +44,46 @@ const FlashcardItem = (props) => {
     }
   }
 
+ 
+
+
+
   function teste() {
     setTelaResposta(!telaResposta)
   }
 
+  function clicouVermelho() {
+   setTelaResposta(true)
+   setAltura(65)
+   setCor("#FFFFFF")
+   setTexto(props.texto)
+   setSeta(erro)
+   setCorTexto("#FF3030")
+   setLinha('line-through')
+   setDisable('disabled')
+   
+   
+  }
+
+  function clicouLaranja() {
+    setTelaResposta(true)
+   setAltura(65)
+   setCor("#FFFFFF")
+   setTexto(props.texto)
+    setSeta(quase)
+    setCorTexto("#FF922E")
+    setLinha('line-through')
+  }
+
+  function clicouVerde() {
+    setTelaResposta(true)
+   setAltura(65)
+   setCor("#FFFFFF")
+   setTexto(props.texto)
+    setSeta(certo)
+    setCorTexto("#2FBE34")
+    setLinha('line-through')
+  }
 
   return (
 
@@ -43,11 +93,15 @@ const FlashcardItem = (props) => {
           <Flashcard
             altura={altura}
             cor={cor}
-            seta={seta}>
-            <Pergunta>
+            seta={seta}
+            corTexto={corTexto}
+            linha={linha}>
+              
+            <Pergunta 
+            >
               {texto}
             </Pergunta>
-            <Button onClick={clicouSetinha}>
+            <Button disabled={disable} onClick={clicouSetinha}>
               <img src={seta} alt={vector} />
             </Button>
           </Flashcard>
@@ -61,14 +115,14 @@ const FlashcardItem = (props) => {
             <PerguntaDois>
               {texto}
             </PerguntaDois>
-            <Maior>
-              <Vermelho>
+            <Maior >
+              <Vermelho onClick={clicouVermelho} >
                 Não lembrei
               </Vermelho>
-              <Laranja>
+              <Laranja onClick={clicouLaranja}>
                 Quase não lembrei
               </Laranja>
-              <Verde>
+              <Verde onClick={clicouVerde}>
                 Zap!
               </Verde>
             </Maior>
@@ -79,23 +133,22 @@ const FlashcardItem = (props) => {
   )
 }
 
-
 export default FlashcardItem
 
 
-
 const Vermelho = styled.div`
-  width: 85px;
-  height: 37px;
-  background-color: #FF3030;
-  border-radius: 5px;
-  font-size:12px;
-  color: #FFFFFF;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align: center;
-  `
+width: 85px;
+height: 37px;
+background-color: #FF3030;
+border-radius: 5px;
+font-size:12px;
+color: #FFFFFF;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align: center;
+cursor: pointer;
+`
 
 const Laranja = styled.div`
 width: 85px;
@@ -106,46 +159,46 @@ font-size:12px;
 line-height:15px;
 color: #FFFFFF;
 display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align: center;
+align-items:center;
+justify-content:center;
+text-align: center;
+cursor: pointer;
 `
 
 const Verde = styled.div`
-  width: 85px;
-  height: 37px;
-  background-color: #2FBE34;
-  border-radius: 5px;
-  font-size:12px;
-  color: #FFFFFF;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align: center;
-  `
+width: 85px;
+height: 37px;
+background-color: #2FBE34;
+border-radius: 5px;
+font-size:12px;
+color: #FFFFFF;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align: center;
+cursor: pointer;
+`
 const Maior = styled.div`
-  width: 270px;
-  height: 37px;
-  display: flex;
-  justify-content: space-between;
-  margin-top:25px;
-    
-  `
-
-
+width: 270px;
+height: 37px;
+display: flex;
+justify-content: space-between;
+margin-top:25px;
+`
 
 const Pergunta = styled.div`
-  margin-left: 15px;
+margin-left: 15px;
 `;
 
 const PerguntaDois = styled.div`
-  margin-top:20px;
-  text-align:center;
+margin-top:20px;
+text-align:center;
 `;
 
 const Button = styled.button`
-  all: unset;
-  margin-right: 15px;
+all: unset;
+margin-right: 15px;
+cursor: pointer;
 `
 
 const Flashcard = styled.div`
@@ -158,16 +211,16 @@ margin-bottom: 25px;
 font-family: 'Recursive', sans-serif;
 font-size: 16px;
 font-weight: 700;
-color: #333333;
+color: ${(d) => d.corTexto};
 
 display: flex;
 justify-content: space-between;
 align-items: center;
+text-decoration: ${(e) => e.linha};
 `
 
-
 const Teste = styled.div`
-  width: 300px;
+width: 300px;
 height: ${(a) => a.altura}px;
 background-color: ${(b) => b.cor};
 border-radius: 5px;
@@ -182,7 +235,16 @@ display:flex;
 align-items:center;
 flex-direction:column;
 
-
 `
 
   ;
+
+
+
+
+
+
+
+
+
+
