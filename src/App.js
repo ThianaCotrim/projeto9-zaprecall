@@ -1,45 +1,40 @@
 import image0 from "./images/image2.png"
-import Flashcard from "./components/Flashcards";
 import styled from "styled-components";
+import { useState } from "react";
+import Flashcards from "./components/Flashcards";
+
+
+
 
 
 const App = () => {
+
+
+ const [quantidade, setQuantidade] = useState(0)
+ 
+  function haha () {
+    setQuantidade(quantidade +1)
+  }
+  
+
+
   return (
     <Container>
       <Titulo>
         <img src={image0} alt={image0}/>
       ZapRecall
       </Titulo>
-
-      < Flashcard/>
-     
-      <BoxLow>
-        0/8 CONCLUÍDOS 
-      </BoxLow>
+      <BoxLow >
+         {quantidade}/8 CONCLUÍDOS 
+          </BoxLow>
+      < Flashcards quantidade={quantidade} haha={haha}/>
     </Container>
   );
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default App
-
-
-
 
 const Container = styled.div `
     background-color: #FB6B6B;

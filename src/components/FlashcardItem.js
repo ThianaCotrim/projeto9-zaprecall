@@ -23,6 +23,7 @@ const FlashcardItem = (props) => {
   const [linha, setLinha] = useState ()
   const [disable, setDisable] = useState ('')
  
+ 
 
 
 
@@ -33,8 +34,6 @@ const FlashcardItem = (props) => {
     setTexto(props.question)
     setSeta(setaredonda)
     clicouSetinhaRedonda()
-    
-
   }
 
   function clicouSetinhaRedonda() {
@@ -43,8 +42,6 @@ const FlashcardItem = (props) => {
       teste()
     }
   }
-
- 
 
 
 
@@ -61,6 +58,7 @@ const FlashcardItem = (props) => {
    setCorTexto("#FF3030")
    setLinha('line-through')
    setDisable('disabled')
+   props.haha()
    
    
   }
@@ -73,6 +71,7 @@ const FlashcardItem = (props) => {
     setSeta(quase)
     setCorTexto("#FF922E")
     setLinha('line-through')
+    props.haha()
   }
 
   function clicouVerde() {
@@ -83,6 +82,7 @@ const FlashcardItem = (props) => {
     setSeta(certo)
     setCorTexto("#2FBE34")
     setLinha('line-through')
+    props.haha()
   }
 
   return (
@@ -95,7 +95,10 @@ const FlashcardItem = (props) => {
             cor={cor}
             seta={seta}
             corTexto={corTexto}
-            linha={linha}>
+            linha={linha}
+            
+            >
+             
               
             <Pergunta 
             >
@@ -105,7 +108,10 @@ const FlashcardItem = (props) => {
               <img src={seta} alt={vector} />
             </Button>
           </Flashcard>
-        </div>
+         
+          </div>
+       
+       
       ) : (
         <div>
           <Teste
@@ -127,10 +133,16 @@ const FlashcardItem = (props) => {
               </Verde>
             </Maior>
           </Teste>
+        
+         
+          
         </div>
       )}
+     
     </div>
+    
   )
+ 
 }
 
 export default FlashcardItem
@@ -235,9 +247,9 @@ display:flex;
 align-items:center;
 flex-direction:column;
 
-`
+`;
 
-  ;
+
 
 
 

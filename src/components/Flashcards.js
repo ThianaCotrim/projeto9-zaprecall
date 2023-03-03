@@ -14,7 +14,7 @@ const cards = [
 ]
 
 
-const Flashcards = () => {
+const Flashcards = (props) => {
 
   return (
     <FlashcardContainer>
@@ -24,9 +24,14 @@ const Flashcards = () => {
             texto={`Pergunta ${index + 1}`}
             question={question}
             answer={answer}
-          />
+            quantidade={props.quantidade}
+            haha={props.haha}
+            />
+            
         )
+        
       })}
+      
     </FlashcardContainer>
   )
 }
