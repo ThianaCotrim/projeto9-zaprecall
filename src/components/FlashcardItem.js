@@ -1,5 +1,4 @@
 
-
 import vector from "../images/vector.png"
 import styled from "styled-components"
 import { useState } from "react"
@@ -7,7 +6,6 @@ import setaredonda from "../images/Setinha.png"
 import erro from "../images/icone_erro.png"
 import certo from "../images/icone_certo.png"
 import quase from "../images/icone_quase.png"
-
 
 const FlashcardItem = (props) => {
 
@@ -20,8 +18,6 @@ const FlashcardItem = (props) => {
   const [linha, setLinha] = useState ()
   const [disable, setDisable] = useState ('')
   const [icone, setIcone] = useState ("play-btn")
-
- 
 
   function clicouSetinha() {
 

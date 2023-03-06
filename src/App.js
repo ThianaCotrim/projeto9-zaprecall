@@ -6,14 +6,12 @@ import Flashcards from "./components/Flashcards";
 
 const App = () => {
 
-
  const [quantidade, setQuantidade] = useState(0)
  
   function contagem () {
     setQuantidade(quantidade +1)
   }
   
-
   return (
     <Container>
       <Titulo>
