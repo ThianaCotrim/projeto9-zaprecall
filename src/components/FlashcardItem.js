@@ -20,6 +20,7 @@ const FlashcardItem = (props) => {
   const [linha, setLinha] = useState ()
   const [disable, setDisable] = useState ('')
   const [icone, setIcone] = useState ("play-btn")
+
  
 
   function clicouSetinha() {
@@ -53,28 +54,31 @@ const FlashcardItem = (props) => {
    setLinha('line-through')
    setDisable('disabled')
    props.contagem()
+   setIcone ("no-icon")
   }
 
   function clicouLaranja() {
     setTelaResposta(true)
-   setAltura(65)
-   setCor("#FFFFFF")
-   setTexto(props.texto)
+    setAltura(65)
+    setCor("#FFFFFF")
+    setTexto(props.texto)
     setSeta(quase)
     setCorTexto("#FF922E")
     setLinha('line-through')
     props.contagem()
+    setIcone ("partial-icon")
   }
 
   function clicouVerde() {
     setTelaResposta(true)
-   setAltura(65)
-   setCor("#FFFFFF")
-   setTexto(props.texto)
+    setAltura(65)
+    setCor("#FFFFFF")
+    setTexto(props.texto)
     setSeta(certo)
     setCorTexto("#2FBE34")
     setLinha('line-through')
     props.contagem()
+    setIcone ("zap-icon")
   }
 
   return (
