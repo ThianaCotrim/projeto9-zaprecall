@@ -107,7 +107,8 @@ const FlashcardItem = (props) => {
           <Teste
             altura={altura}
             cor={cor}
-            seta={seta}>
+            seta={seta}
+            data-test="flashcard">
             <PerguntaDois>
               <div data-test="flashcard-text">
               {texto}
