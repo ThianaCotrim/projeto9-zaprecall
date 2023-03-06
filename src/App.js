@@ -4,9 +4,6 @@ import { useState } from "react";
 import Flashcards from "./components/Flashcards";
 
 
-
-
-
 const App = () => {
 
 
@@ -16,7 +13,6 @@ const App = () => {
     setQuantidade(quantidade +1)
   }
   
-
 
   return (
     <Container>
@@ -31,7 +27,6 @@ const App = () => {
     </Container>
   );
 }
-
 
 
 export default App

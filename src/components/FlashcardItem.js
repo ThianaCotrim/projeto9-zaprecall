@@ -9,7 +9,6 @@ import certo from "../images/icone_certo.png"
 import quase from "../images/icone_quase.png"
 
 
-
 const FlashcardItem = (props) => {
 
   const [altura, setAltura] = useState(65)
@@ -21,7 +20,6 @@ const FlashcardItem = (props) => {
   const [linha, setLinha] = useState ()
   const [disable, setDisable] = useState ('')
   const [icone, setIcone] = useState ("play-btn")
- 
  
 
   function clicouSetinha() {
@@ -41,8 +39,6 @@ const FlashcardItem = (props) => {
     }
   }
 
-
-
   function teste() {
     setTelaResposta(!telaResposta)
   }
@@ -57,8 +53,6 @@ const FlashcardItem = (props) => {
    setLinha('line-through')
    setDisable('disabled')
    props.contagem()
-   
-   
   }
 
   function clicouLaranja() {
@@ -96,7 +90,9 @@ const FlashcardItem = (props) => {
             linha={linha}
             data-test="flashcard">
             <Pergunta >
+              <div data-test="flashcard-text">
               {texto}
+              </div>
             </Pergunta>
             <Button disabled={disable} onClick={clicouSetinha} data-test={icone} icone={icone}>
               <img src={seta} alt={vector} data-test="no-icon"/>
@@ -111,7 +107,9 @@ const FlashcardItem = (props) => {
             seta={seta}
             data-test="turn-btn">
             <PerguntaDois>
+              <div data-test="flashcard-text">
               {texto}
+              </div>
             </PerguntaDois>
             <Maior >
               <Vermelho onClick={clicouVermelho} data-test="no-btn">
@@ -132,7 +130,6 @@ const FlashcardItem = (props) => {
 }
 
 export default FlashcardItem
-
 
 const Vermelho = styled.div`
 width: 85px;

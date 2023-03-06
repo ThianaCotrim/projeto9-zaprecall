@@ -13,7 +13,6 @@ const cards = [
   { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
 ]
 
-
 const Flashcards = (props) => {
 
   return (
@@ -35,7 +34,6 @@ const Flashcards = (props) => {
     </FlashcardContainer>
   )
 }
-
 
 export default Flashcards
 
