@@ -94,8 +94,11 @@ const FlashcardItem = (props) => {
               {texto}
               </div>
             </Pergunta>
-            <Button disabled={disable} onClick={clicouSetinha} data-test={icone} icone={icone}>
-              <img src={seta} alt={vector} data-test="no-icon"/>
+            <Button disabled={disable} 
+            onClick={clicouSetinha} 
+            data-test={icone} 
+            icone={icone}>
+              <img src={seta} alt={vector}/>
             </Button>
           </Flashcard>
         </div>
@@ -104,8 +107,7 @@ const FlashcardItem = (props) => {
           <Teste
             altura={altura}
             cor={cor}
-            seta={seta}
-            data-test="turn-btn">
+            seta={seta}>
             <PerguntaDois>
               <div data-test="flashcard-text">
               {texto}
